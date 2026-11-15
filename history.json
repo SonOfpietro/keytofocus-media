@@ -1,0 +1,9 @@
+[
+  {"date": "2026-10-27", "hook": "Wchodzisz sprawdzić jedną rzecz", "theme": "odruchowe przewijanie", "format": "plansze"},
+  {"date": "2026-10-29", "hook": "Miałem tylko sprawdzić godzinę", "theme": "tylko sprawdzę godzinę", "format": "plansze"},
+  {"date": "2026-10-31", "hook": "Praca otwarta. Telefon obok. Instagram: zablokowany.", "theme": "prokrastynacja w pracy", "format": "plansze"},
+  {"date": "2026-11-03", "hook": "Gol. Obiad. Randka. Kciuk nie pyta.", "theme": "ważne chwile przerywane telefonem", "format": "plansze"},
+  {"date": "2026-11-05", "hook": "Tylko sprawdzę godzinę.", "theme": "tylko sprawdzę godzinę", "format": "plansze"},
+  {"date": "2026-11-09", "slug": "14-krokow", "hook": "Do Instagrama mam 14 kroków.", "theme": "klucz w kuchni, trzeba wstać", "format": "animacja", "file": "media/2026-11-09-14-krokow.mp4", "instagram": "https://www.instagram.com/reel/DfiL9fyjnVJ/"},
+  {"date": "2026-11-11", "slug": "jeszcze-15-minut", "hook": "Limit: 30 minut. „Jeszcze 15 minut” ×18", "theme": "miękkie limity z przyciskiem odroczenia vs fizyczny klucz", "format": "animacja", "file": "media/2026-11-11-jeszcze-15-minut.mp4", "instagram": "https://www.instagram.com/reel/DfnM0KNCg8o/"}
+]

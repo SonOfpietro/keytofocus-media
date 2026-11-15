@@ -1,0 +1,5 @@
+node_modules/
+**/stills/
+**/check/
+**/*.wav
+**/video_noaudio.mp4
