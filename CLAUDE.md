@@ -34,8 +34,10 @@ Repo z silnikiem animacji, muzyką i gotowymi rolkami dla Key to Focus. Zaplanow
 | data | rolka | wyświetlenia | przewinięcia w 3 s | wniosek |
 |---|---|---|---|---|
 | 03.11 | Gol. Obiad. Randka (plansze) | 141 | 59% | relatable sytuacje działają najlepiej |
+| 05.11 | Tylko sprawdzę godzinę (plansze) | 114 | 59% | śr. 5,9 s; plansze trzymają widza najdłużej |
 | 09.11 | 14 kroków (animacja) | 62 | 67% | nieczytelna klatka 0 = przewinięcie |
 | 11.11 | Jeszcze 15 minut (animacja) | 5 | 100% | podejrzenie ograniczenia zasięgu konta, nie samej treści – sprawdzić Stan konta |
+| 15.11 | Najpierw wstań (animacja) | 60 | 83% | śr. 3,3 s (plansze 5,9–7,6 s); zasięg wrócił, ale neutralne „Budzik: 06:30.” nad gęstą animacją nie zatrzymuje → na klatce 0 duże hasło-sytuacja z ukrytym żartem, tekst ważniejszy od animacji |
 
 ## Jak powstaje rolka (procedura dla zaplanowanego zadania)
 1. `npm ci` w katalogu głównym (ffmpeg, python3, numpy, scipy muszą być dostępne; doinstaluj pip install --break-system-packages, jeśli brak).
