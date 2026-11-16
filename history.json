@@ -53,6 +53,22 @@
     "hook": "Budzik: 06:30. „Następna rolka” ×18",
     "theme": "poranne scrollowanie w łóżku; harmonogram blokady do 8:00, klucz przy ekspresie",
     "format": "animacja (szablon jak jeszcze-15-minut)",
-    "file": "media/2026-11-15-najpierw-wstan.mp4"
+    "file": "media/2026-11-15-najpierw-wstan.mp4",
+    "instagram": "https://www.instagram.com/reel/Dfxh3a-Feau/",
+    "metricoolPostId": 429166841
+  },
+  {
+    "date": "2026-11-16",
+    "slug": "na-2-minuty",
+    "hook": "Idę do łazienki na 2 minuty.",
+    "theme": "scrollowanie w łazience (25:47 zamiast 2 minut); klucz NFC w przedpokoju, po klucz trzeba wyjść z łazienki",
+    "format": "animacja (szablon jak najpierw-wstan, duże hasło na klatce 0)",
+    "file": "media/2026-11-16-na-2-minuty.mp4",
+    "cover": "media/2026-11-16-na-2-minuty.jpg",
+    "videoCoverMilliseconds": 3600,
+    "caption": "Idę do łazienki na 2 minuty. Wychodzę po 25, ze zdrętwiałymi nogami.\n\nW Key to Focus blokujesz wybrane aplikacje, a dostęp na ustalony czas daje dopiero przyłożenie fizycznego klucza NFC. Jeśli klucz leży w przedpokoju, w łazience zostaje ci… łazienka.\n\nSzukam testerów: Android 8+ z NFC. Testy są bezpłatne. Zgłoszenia: link w bio.\n\nIle naprawdę trwają twoje „2 minuty” w łazience?\n\n#KeyToFocus #mniejscrollowania #cyfrowenawyki #skupienie #Android",
+    "scheduled": "2026-11-16T18:30:00+01:00",
+    "metricoolPostId": 430038271,
+    "metricoolUuid": "6418983150732004736"
   }
 ]
