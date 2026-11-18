@@ -3,8 +3,26 @@
 Repo z silnikiem animacji, muzyką i gotowymi rolkami dla Key to Focus. Zaplanowane zadania Claude robią tu rolki i publikują je przez Metricool. Wszystko w tym repo jest publiczne: żadnych sekretów, tokenów ani kodu aplikacji.
 
 ## Cel i odbiorca
-- Cel: rekrutacja testerów zamkniętego testu Google Play (Android). Tylko ruch organiczny, bez reklam.
-- Odbiorca: Polacy, którzy odruchowo sięgają po telefon. Język: polski, naturalny, konkretny, lekki humor. Bez coachingu i moralizowania.
+- Cel: rekrutacja testerów zamkniętego testu Google Play (Android). Tylko ruch organiczny, bez reklam. Mamy zachęcać, nie zniechęcać.
+- Odbiorca: Polacy, którzy odruchowo sięgają po telefon. Język polski, naturalny, konkretny.
+
+## Kierunek v2 (ankieta Dawida, 18.11.2026) – OBOWIĄZUJE
+Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem („licznik ×18 → zegar → przycisk w klucz → odmowa → puenta”), wymuszony humor, bez emocji. Tego nie powtarzamy.
+- Inspiracja: konto dr Asi Wojsiat (neurobiolożka, @drjoanwojsiat) – spokój, rzetelność, jednolitość. Nie kopiujemy jej treści ani wyglądu, bierzemy spokojny, ludzki, naukowy ton.
+- Ton: szczery i ludzki, spokojny i estetyczny, edukacyjny; humor tylko naturalny, sytuacyjny – nigdy puenta na siłę.
+- Bohater: codzienna sytuacja widza i fizyczny klucz jako przyjemny gadżet (dotyk, dźwięk, satysfakcja).
+- Stałe (jednolitość): wyłącznie paleta ciemna zieleń + mięta (#3CFFB0, szałwia #96D6BC, tło #05120D) i spokojny rytm. Wszystko inne (format, kompozycja, historia) zmienia się z rolki na rolkę – różnorodność 7/10.
+- Rotacja formatów – nigdy ten sam dwa razy z rzędu, w każdych 4 kolejnych rolkach min. 3 różne:
+  A) spokojna animacja-wyjaśnienie (diagram, jedna myśl, źródło),
+  B) mem / POV (jedna sytuacja, 1–3 plansze, ludzki żart),
+  C) ilustrowana mini-scenka (postać, mieszkanie, krótka historia),
+  D) pokaz aplikacji krok po kroku (prawdziwe ekrany i klucz – z materiałów Dawida).
+- Długość zależy od pomysłu (ok. 7–25 s). Lepiej krótko i spokojnie niż długo i gęsto.
+- Edukacja tylko ze źródłem: nazwisko badacza / książka na ekranie lub w opisie. Bez statystyk bez źródła.
+- Wzorzec stylu v2: `reels/2026-11-18-petla-nawyku/` (paleta, fonty Manrope + JetBrains Mono, łagodne przejścia, plansza końcowa, spokojny dźwięk). Z niego bierzesz WYŁĄCZNIE narzędzia stylu i planszę końcową. **Sceny, kompozycję i dźwiękowy motyw piszesz za każdym razem od nowa.** Kopiowanie scen z poprzedniej rolki = błąd.
+- Zakazane efekty: glitch, RGB split, trzęsienie ekranu, błyski, licznik ×N, eksplodujący zegar, neonowy fiolet/czerwień, gęsty HUD.
+- Zatwierdzanie: pierwsze 3 rolki w nowym stylu Dawid zatwierdza przed publikacją (zadanie w panelu z linkiem do pliku; publikacja dopiero po jego „OK” w zakładce DLA CLAUDE). Potem publikacja automatyczna. Rytm: 3 rolki tygodniowo.
+- Materiał od Dawida: ok. 15 min nagrań tygodniowo (telefon, klucz, ręka, bez twarzy) – patrz lista ujęć w `NAGRANIA.md`.
 
 ## Co aplikacja NAPRAWDĘ robi (wolno mówić)
 - Android 8+ z NFC. Blokuje wybrane aplikacje i strony (strony przez lokalny filtr DNS).
@@ -22,13 +40,13 @@ Repo z silnikiem animacji, muzyką i gotowymi rolkami dla Key to Focus. Zaplanow
 - Logotypy i wierne kopie interfejsu Instagrama/TikToka/Google, prawdziwe osoby, cudza muzyka.
 
 ## Format (twarde zasady)
-- 1080×1920, 30 fps, 14–20 s, H.264 + AAC, głośność −14 LUFS, true peak ≤ −1,5 dB.
+- 1080×1920, 30 fps, długość wg pomysłu (ok. 7–25 s), H.264 + AAC, głośność −14 LUFS, true peak ≤ −1,5 dB.
 - **Klatka 0 musi być od razu czytelna**: hasło wprowadzające widoczne bez animacji „dekodowania” i bez glitchu. (Rolka „14 kroków” miała rozsypany tekst na starcie i 67% przewinięć w 3 s.)
 - Plansza tekstu: maks. ~6 słów, min. ~1,2 s na przeczytanie.
 - Bezpieczna strefa tekstu: x 90–850, y 230–1440 (prawa krawędź i dół zajęte przez UI Instagrama).
-- Pętla: koniec przechodzi w początek. Ostatnia plansza: KEY TO FOCUS / SZUKAM TESTERÓW / Android 8+ · NFC · bezpłatnie / LINK W BIO.
+- Ostatnia plansza (styl v2): logo, „Key to Focus”, „Szukam testerów”, „Android 8+ z NFC · bezpłatnie”, „link w bio”.
 - Muzyka i efekty tylko syntezowane w kodzie (numpy/scipy), zsynchronizowane z wydarzeniami z timeline.json. Nigdy cudzych utworów.
-- Styl: futurystyczny HUD, ciemna zieleń + mięta (#3CFFB0), cyjan, czerwień tylko przy blokadzie; fonty z engine/fonts (Unbounded, Chakra Petch, JetBrains Mono).
+- Styl: patrz „Kierunek v2” – ciemna zieleń + mięta, spokojny ruch, fonty Manrope + JetBrains Mono (engine/fonts). Unbounded/Chakra Petch i futurystyczny HUD tylko jako rzadki akcent formatu A, nigdy jako szablon.
 
 ## Lekcje z wyników (aktualizuj po każdej analizie)
 | data | rolka | wyświetlenia | przewinięcia w 3 s | wniosek |
@@ -43,8 +61,8 @@ Repo z silnikiem animacji, muzyką i gotowymi rolkami dla Key to Focus. Zaplanow
 1. `npm ci` w katalogu głównym (ffmpeg, python3, numpy, scipy muszą być dostępne; doinstaluj pip install --break-system-packages, jeśli brak).
 2. Przeczytaj `history.json` – nowy pomysł nie może powtarzać hasła ani motywu z ostatnich 6 rolek.
 3. Sprawdź wyniki ostatnich rolek w Metricool (getAnalyticsDataByMetrics, metryki IGRE02, IGRE06, IGRE23, IGRE24, IGRE28, IGRE30) i dopisz wiersz do tabeli lekcji.
-4. Wybierz jeden pomysł: jedna codzienna sytuacja + zwrot z kluczem + puenta. Sprawdź każde zdanie z sekcjami „wolno / nie wolno”.
-5. Utwórz `reels/<RRRR-MM-DD>-<slug>/` na bazie najnowszej rolki: skopiuj jej `reel.mjs`, `timeline.json`, `sound.py`, przepisz sceny, teksty i wydarzenia. Zostaw wspólne narzędzia (tło, HUD, bloom, glitch, plansza końcowa).
+4. Wybierz format wg rotacji (sprawdź pole `format` w history.json) i jeden pomysł: codzienna sytuacja lub jedna rzetelna myśl + klucz. Sprawdź każde zdanie z sekcjami „wolno / nie wolno”.
+5. Utwórz `reels/<RRRR-MM-DD>-<slug>/`. Narzędzia stylu i planszę końcową weź z `reels/2026-11-18-petla-nawyku/`; sceny, kompozycję, ruch i motyw dźwiękowy napisz od nowa pod wybrany format.
 6. Wyrenderuj klatki kontrolne (`node reel.mjs --still=0,1,…`), obejrzyj je narzędziem Read: czytelność, polskie znaki, bezpieczna strefa, brak nakładania się tekstu. Poprawiaj aż do skutku.
 7. Render: `node reel.mjs --out=video_noaudio.mp4`, dźwięk: `python3 sound.py` (pisze mix.wav lub mix2.wav), złożenie:
    `ffmpeg -i video_noaudio.mp4 -i mix.wav -map 0:v -map 1:a -c:v copy -af loudnorm=I=-14:TP=-2:LRA=11 -ar 48000 -c:a aac -b:a 192k -shortest -movflags +faststart ../../media/<RRRR-MM-DD>-<slug>.mp4`
