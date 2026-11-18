@@ -70,5 +70,15 @@
     "scheduled": "2026-11-16T18:30:00+01:00",
     "metricoolPostId": 430038271,
     "metricoolUuid": "6418983150732004736"
+  },
+  {
+    "date": "2026-11-18",
+    "slug": "petla-nawyku",
+    "hook": "Ręka sięga po telefon, zanim pomyślisz.",
+    "theme": "nawyk jako pętla (nuda–ręka–scroll), tarcie wg Wendy Wood, klucz z dala od kanapy",
+    "format": "A (spokojna animacja-wyjaśnienie, styl v2)",
+    "file": "media/2026-11-18-petla-nawyku.mp4",
+    "metricool_id": 432933080,
+    "approved_by_dawid": true
   }
 ]

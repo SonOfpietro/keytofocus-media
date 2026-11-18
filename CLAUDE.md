@@ -22,6 +22,8 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 - Wzorzec stylu v2: `reels/2026-11-18-petla-nawyku/` (paleta, fonty Manrope + JetBrains Mono, łagodne przejścia, plansza końcowa, spokojny dźwięk). Z niego bierzesz WYŁĄCZNIE narzędzia stylu i planszę końcową. **Sceny, kompozycję i dźwiękowy motyw piszesz za każdym razem od nowa.** Kopiowanie scen z poprzedniej rolki = błąd.
 - Zakazane efekty: glitch, RGB split, trzęsienie ekranu, błyski, licznik ×N, eksplodujący zegar, neonowy fiolet/czerwień, gęsty HUD.
 - Zatwierdzanie: pierwsze 3 rolki w nowym stylu Dawid zatwierdza przed publikacją (zadanie w panelu z linkiem do pliku; publikacja dopiero po jego „OK” w zakładce DLA CLAUDE). Potem publikacja automatyczna. Rytm: 3 rolki tygodniowo.
+- Zatwierdzone przez Dawida w nowym stylu: 1/3 (Pętla nawyku, 18.11).
+- Narzędzia do rozważenia: HyperFrames (HTML/CSS/GSAP → wideo, `npx --yes hyperframes@0.8.157`, w chmurze działa – jest google-chrome) daje bogatszy ruch niż ręczny canvas; cutmate (github.com/wisniewskib/cutmate) to montaż nagrań z mówieniem do kamery – przyda się, jeśli Dawid zacznie nagrywać siebie. Przed pierwszym użyciem HyperFrames zrób render testowy.
 - Materiał od Dawida: ok. 15 min nagrań tygodniowo (telefon, klucz, ręka, bez twarzy) – patrz lista ujęć w `NAGRANIA.md`.
 
 ## Co aplikacja NAPRAWDĘ robi (wolno mówić)
