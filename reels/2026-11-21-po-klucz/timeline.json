@@ -1,0 +1,7 @@
+{
+  "fps": 30,
+  "duration": 15.5,
+  "engine": "hyperframes@0.8.157 (index.html)",
+  "scenes": { "pov": [0.0, 3.0], "list": [3.0, 9.3], "tea": [9.3, 13.5], "end": [13.5, 15.5] },
+  "events": { "keyIn": 0.35, "listHead": 3.05, "items": [3.45, 4.7, 5.95, 7.2], "teaIn": 9.35, "forgot": 10.5, "standUp": 11.7, "logo": 13.55, "cta": 14.3 }
+}
