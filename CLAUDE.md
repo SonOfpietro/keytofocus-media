@@ -22,9 +22,16 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 - Wzorzec stylu v2: `reels/2026-11-18-petla-nawyku/` (paleta, fonty Manrope + JetBrains Mono, łagodne przejścia, plansza końcowa, spokojny dźwięk). Z niego bierzesz WYŁĄCZNIE narzędzia stylu i planszę końcową. **Sceny, kompozycję i dźwiękowy motyw piszesz za każdym razem od nowa.** Kopiowanie scen z poprzedniej rolki = błąd.
 - Zakazane efekty: glitch, RGB split, trzęsienie ekranu, błyski, licznik ×N, eksplodujący zegar, neonowy fiolet/czerwień, gęsty HUD.
 - Zatwierdzanie: pierwsze 3 rolki w nowym stylu Dawid zatwierdza przed publikacją (zadanie w panelu z linkiem do pliku; publikacja dopiero po jego „OK” w zakładce DLA CLAUDE). Potem publikacja automatyczna. Rytm: 3 rolki tygodniowo.
-- Zatwierdzone przez Dawida w nowym stylu: 1/3 (Pętla nawyku, 18.11).
-- Narzędzia do rozważenia: HyperFrames (HTML/CSS/GSAP → wideo, `npx --yes hyperframes@0.8.157`, w chmurze działa – jest google-chrome) daje bogatszy ruch niż ręczny canvas; cutmate (github.com/wisniewskib/cutmate) to montaż nagrań z mówieniem do kamery – przyda się, jeśli Dawid zacznie nagrywać siebie. Przed pierwszym użyciem HyperFrames zrób render testowy.
+- Zatwierdzone przez Dawida w nowym stylu: 2/3 (Pętla nawyku 18.11 – format A, canvas; Po klucz 21.11 – format B, HyperFrames).
+- Silniki: canvas (`reels/2026-11-18-petla-nawyku/reel.mjs`) albo HyperFrames (HTML/CSS/GSAP → wideo; wzorzec techniczny `reels/2026-11-21-po-klucz/`). HyperFrames działa w chmurze: `export HYPERFRAMES_BROWSER_PATH=/usr/bin/google-chrome`, GSAP i fonty lokalnie w `assets/` (bez CDN), `npx --yes hyperframes@0.8.157 check`, potem `render -o video_noaudio.mp4 -q delivery` (~50 s na 15 s filmu); klatki kontrolne wyciągasz ffmpegiem z renderu. Ostrzeżenia `nested_structure_needs_subcomposition` są niegroźne; cutmate (github.com/wisniewskib/cutmate) to montaż nagrań z mówieniem do kamery – przyda się, jeśli Dawid zacznie nagrywać siebie.
 - Materiał od Dawida: ok. 15 min nagrań tygodniowo (telefon, klucz, ręka, bez twarzy) – patrz lista ujęć w `NAGRANIA.md`.
+
+## Akceptacja i publikacja (zadanie zaplanowane „KTF rolka Instagram”)
+- Rytm publikacji: pon 18:30, śr 19:00, pt 18:00 (Europe/Warsaw). Zadanie startuje nd–pt o 14:43.
+- Nd/wt/czw = PRODUKCJA rolki na następny dzień. Pn/śr/pt = PUBLIKACJA.
+- Dopóki licznik „Zatwierdzone przez Dawida” < 3/3: produkcja kończy się zadaniem w panelu `tasks/rolka-<data publikacji>` (link do MP4, opis, instrukcja). W history.json wpis ze `status: "czeka"`. Publikacja planuje post tylko, jeśli Dawid dał OK: wiadomość w zakładce DLA CLAUDE (inbox) z „OK” albo odhaczone zadanie rolki. Prośba o poprawki → poprawiasz, wypychasz, aktualizujesz zadanie, nie publikujesz. Brak odpowiedzi → nie publikujesz, zadanie dostaje priorytet „pilne”.
+- Po OK: createScheduledPost, `status: "zaplanowana"` + metricool_id w history.json, licznik w tym pliku +1, zadanie w panelu `done`.
+- Od 3/3: produkcja od razu planuje post na następny dzień (bez zadania w panelu), publikacja tylko sprawdza, że post jest w Metricool.
 
 ## Co aplikacja NAPRAWDĘ robi (wolno mówić)
 - Android 8+ z NFC. Blokuje wybrane aplikacje i strony (strony przez lokalny filtr DNS).

@@ -79,6 +79,20 @@
     "format": "A (spokojna animacja-wyjaśnienie, styl v2)",
     "file": "media/2026-11-18-petla-nawyku.mp4",
     "metricool_id": 432933080,
-    "approved_by_dawid": true
+    "approved_by_dawid": true,
+    "status": "opublikowana"
+  },
+  {
+    "date": "2026-11-21",
+    "slug": "po-klucz",
+    "hook": "POV: Idziesz po klucz, żeby odblokować Instagram.",
+    "theme": "po drodze po klucz robisz zwykłe rzeczy (czajnik, kwiatek, mama, okno) i wracasz z herbatą – chęć na Instagram mija",
+    "format": "B (mem/POV, styl v2, HyperFrames)",
+    "file": "media/2026-11-21-po-klucz.mp4",
+    "caption": "Idziesz po klucz, żeby odblokować Instagram. Po drodze czajnik, kwiatek, wiadomość do mamy… (pełny opis w Metricool)",
+    "metricool_id": 436691437,
+    "publication": "2026-11-21T15:00:00+01:00",
+    "approved_by_dawid": true,
+    "status": "zaplanowana"
   }
 ]
