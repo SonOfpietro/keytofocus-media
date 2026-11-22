@@ -76,6 +76,8 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 4. Wybierz format wg rotacji (sprawdź pole `format` w history.json) i jeden pomysł: codzienna sytuacja lub jedna rzetelna myśl + klucz. Sprawdź każde zdanie z sekcjami „wolno / nie wolno”.
 5. Utwórz `reels/<RRRR-MM-DD>-<slug>/`. Narzędzia stylu i planszę końcową weź z `reels/2026-11-18-petla-nawyku/`; sceny, kompozycję, ruch i motyw dźwiękowy napisz od nowa pod wybrany format.
 6. Wyrenderuj klatki kontrolne (`node reel.mjs --still=0,1,…`), obejrzyj je narzędziem Read: czytelność, polskie znaki, bezpieczna strefa, brak nakładania się tekstu. Poprawiaj aż do skutku.
+   - Dłonie, twarze i postacie w zbliżeniu oglądaj w pełnej rozdzielczości (wycinek kadru), nie tylko na zmniejszonych arkuszach. (22.11: ręka w zbliżeniu w „Klucz ma Ola” była kanciastą plamą – Dawid kazał poprawić.)
+   - Unikaj rysowanych rąk w dużym zbliżeniu. Jeśli są nagrania Dawida (Dysk Google „KeyToFocus nagrania”, lista w `NAGRANIA.md`: ręka, klucz, telefon), zbliżenia bierz z nich. Jeśli nie ma, pokaż rękę mniejszą albo narysuj ją starannie (paznokieć, kostki, podwinięte palce, mankiet, cień) – wzór: `reels/2026-11-23-klucz-ma-ola/` (v2).
 7. Render: `node reel.mjs --out=video_noaudio.mp4`, dźwięk: `python3 sound.py` (pisze mix.wav lub mix2.wav), złożenie:
    `ffmpeg -i video_noaudio.mp4 -i mix.wav -map 0:v -map 1:a -c:v copy -af loudnorm=I=-14:TP=-2:LRA=11 -ar 48000 -c:a aac -b:a 192k -shortest -movflags +faststart ../../media/<RRRR-MM-DD>-<slug>.mp4`
    oraz okładka `../../media/<RRRR-MM-DD>-<slug>.jpg` (najmocniejsza klatka z czytelnym hasłem).
