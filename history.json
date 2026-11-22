@@ -108,10 +108,12 @@
     "duration": 21.0,
     "caption": "Egzamin w piątek, a ręka i tak sięga po telefon. Dlatego na czas sesji klucz ma Ola – za ścianą, razem z pytaniem „ile stron?”.\n\nW Key to Focus blokujesz wybrane aplikacje, a dostęp na ustalony czas daje dopiero przyłożenie fizycznego klucza NFC. Klucz to zwykły przedmiot: możesz go odłożyć daleko albo oddać komuś na przechowanie.\n\nSzukam testerów: Android 8+ z NFC. Testy są bezpłatne. Zgłoszenia: link w bio.\n\nKto u ciebie pilnowałby klucza?\n\n#KeyToFocus #mniejscrollowania #cyfrowenawyki #skupienie #Android",
     "publication": "2026-11-23T18:30:00+01:00",
-    "approved_by_dawid": false,
-    "status": "czeka",
+    "approved_by_dawid": true,
+    "status": "zaplanowana",
     "revisions": [
       "v2 (22.11): przerysowana ręka w zbliżeniu (ok. 4 s) po uwadze Dawida"
-    ]
+    ],
+    "metricool_id": 437764132,
+    "metricoolUuid": "-7890665037884996096"
   }
 ]
