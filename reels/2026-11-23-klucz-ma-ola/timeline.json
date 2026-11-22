@@ -1,0 +1,19 @@
+{
+  "fps": 30,
+  "duration": 21.0,
+  "engine": "hyperframes@0.8.157 (index.html)",
+  "format": "C – ilustrowana mini-scenka",
+  "scenes": { "desk": [0.0, 3.4], "reach": [3.4, 6.4], "door": [6.4, 12.2], "later": [12.2, 15.2], "click": [15.2, 18.6], "end": [18.6, 21.0] },
+  "events": {
+    "write": [[0.25, 3.1], [12.6, 14.8]],
+    "handIn": 3.85, "touch": 4.55, "screenOn": 4.65,
+    "standUp": 6.65, "steps": [7.05, 7.4, 7.75, 8.1],
+    "knocks": [8.45, 8.68, 8.91],
+    "bubbleOla1": 9.05, "bubbleMe": 9.95, "bubbleOla2": 10.75,
+    "fadeBack": 11.95, "laterIn": 12.3,
+    "clock": [12.45, 14.85], "pageFlips": [12.9, 13.7, 14.5],
+    "closeIn": 15.0, "keySlide": [15.45, 16.05], "bubblePlease": 15.65,
+    "tap": 16.6, "klik": 16.65, "earned": 16.95,
+    "logo": 18.75, "cta": 19.4
+  }
+}

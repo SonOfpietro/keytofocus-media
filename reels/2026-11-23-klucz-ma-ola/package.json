@@ -1,0 +1,12 @@
+{
+  "name": "klucz-ma-ola",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.157 check",
+    "render": "npx --yes hyperframes@0.8.157 render"
+  },
+  "dependencies": {
+    "gsap": "^3.14.2"
+  }
+}

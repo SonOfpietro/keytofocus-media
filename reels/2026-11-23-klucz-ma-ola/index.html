@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pl" data-resolution="portrait">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face { font-family: M8; src: url(assets/Manrope-800.ttf); }
+@font-face { font-family: M6; src: url(assets/Manrope-600.ttf); }
+@font-face { font-family: M4; src: url(assets/Manrope-400.ttf); }
+@font-face { font-family: JB; src: url(assets/JetBrainsMono-700.ttf); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #05120D; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 58%, #0B241B 0%, #05120D 66%); color: #EAF7F1; }
+.clip { position: absolute; inset: 0; }
+.full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.kick { position: absolute; left: 90px; font-family: JB; font-size: 30px; letter-spacing: .16em; color: #96D6BC; }
+.kick b { display: inline-block; width: 14px; height: 14px; border-radius: 7px; background: #3CFFB0; margin-right: 18px; vertical-align: 3px; }
+.h { position: absolute; left: 90px; width: 760px; font-family: M8; letter-spacing: -0.01em; line-height: 1.12; }
+.mint { color: #3CFFB0; }
+.sage { color: #96D6BC; }
+.bub { position: absolute; font-family: M6; font-size: 46px; line-height: 1.15; padding: 22px 34px; border-radius: 34px; }
+.bub.ola { background: #0B241B; border: 3px solid #3CFFB0; color: #EAF7F1; }
+.bub.me { background: #96D6BC; color: #05120D; }
+.bub.ola::after { content: ""; position: absolute; right: 56px; bottom: -15px; width: 26px; height: 26px; background: #0B241B; border-right: 3px solid #3CFFB0; border-bottom: 3px solid #3CFFB0; transform: rotate(45deg); }
+.bub.me::after { content: ""; position: absolute; right: 34px; bottom: -12px; width: 24px; height: 24px; background: #96D6BC; transform: rotate(45deg); }
+.bub .who { display: block; font-family: JB; font-size: 22px; letter-spacing: .14em; color: #3CFFB0; margin-bottom: 6px; }
+.end-t { position: absolute; left: 0; width: 940px; text-align: center; }
+.cta { position: absolute; left: 300px; top: 1250px; width: 340px; height: 92px; border-radius: 46px; border: 3px solid #3CFFB0;
+  background: rgba(60,255,176,.12); font-family: M6; font-size: 40px; display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="21" data-width="1080" data-height="1920">
+
+  <!-- tło: kilka spokojnie unoszących się drobin światła -->
+  <svg class="full clip" id="bg" data-start="0" data-duration="21" data-track-index="0" viewBox="0 0 1080 1920">
+    <g id="motes" fill="#96D6BC"></g>
+  </svg>
+
+  <!-- PLAN OGÓLNY: pokój (ściana, okno, biurko, postać) + drzwi Oli; kamera = przesuw #world -->
+  <svg class="full clip" id="room" data-start="0" data-duration="18.6" data-track-index="1" viewBox="0 0 1080 1920">
+    <defs>
+      <clipPath id="panelClip"><rect x="70" y="640" width="940" height="800" rx="44"/></clipPath>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5743"/><stop offset="1" stop-color="#2E7A5E"/></linearGradient>
+      <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3CFFB0" stop-opacity=".30"/><stop offset="1" stop-color="#3CFFB0" stop-opacity="0"/></linearGradient>
+      <radialGradient id="floorGlow"><stop offset="0" stop-color="#3CFFB0" stop-opacity=".22"/><stop offset="1" stop-color="#3CFFB0" stop-opacity="0"/></radialGradient>
+    </defs>
+    <g clip-path="url(#panelClip)">
+      <g id="world">
+        <!-- ściana i podłoga -->
+        <rect x="0" y="600" width="1900" height="690" fill="#0E2B21"/>
+        <rect x="0" y="1290" width="1900" height="200" fill="#091D16"/>
+        <rect x="0" y="1276" width="1900" height="14" fill="#12352A"/>
+        <line x1="0" y1="1290" x2="1900" y2="1290" stroke="rgba(150,214,188,.25)" stroke-width="3"/>
+
+        <!-- okno -->
+        <g id="win">
+          <rect x="120" y="700" width="240" height="300" rx="10" fill="url(#sky)"/>
+          <rect id="night" x="120" y="700" width="240" height="300" rx="10" fill="#04100B" opacity="0"/>
+          <g id="stars" fill="#EAF7F1" opacity="0">
+            <circle cx="160" cy="735" r="2.5"/><circle cx="215" cy="760" r="2"/><circle cx="330" cy="728" r="2.5"/><circle cx="260" cy="790" r="1.8"/><circle cx="185" cy="812" r="2"/>
+          </g>
+          <circle id="moon" cx="296" cy="770" r="24" fill="#96D6BC" opacity="0"/>
+          <path d="M120 1000 V 905 H 165 V 870 H 205 V 920 H 245 V 885 H 290 V 930 H 360 V 1000 Z" fill="#0A2219"/>
+          <g id="lights" fill="#3CFFB0" opacity=".25">
+            <rect x="177" y="884" width="8" height="10"/><rect x="190" y="904" width="8" height="10"/><rect x="258" y="900" width="8" height="10"/><rect x="272" y="920" width="8" height="10"/><rect x="215" y="935" width="8" height="10"/>
+          </g>
+          <rect x="120" y="700" width="240" height="300" rx="10" fill="none" stroke="#2A7A5C" stroke-width="10"/>
+          <line x1="240" y1="700" x2="240" y2="1000" stroke="#2A7A5C" stroke-width="8"/>
+          <line x1="120" y1="850" x2="360" y2="850" stroke="#2A7A5C" stroke-width="8"/>
+          <rect x="104" y="998" width="272" height="16" rx="5" fill="#1F5743"/>
+        </g>
+
+        <!-- zegar ścienny -->
+        <g id="clock">
+          <circle cx="560" cy="735" r="44" fill="#0A1F18" stroke="#96D6BC" stroke-opacity=".6" stroke-width="5"/>
+          <g stroke="#96D6BC" stroke-opacity=".55" stroke-width="3" stroke-linecap="round">
+            <line x1="560" y1="699" x2="560" y2="706"/><line x1="560" y1="764" x2="560" y2="771"/><line x1="524" y1="735" x2="531" y2="735"/><line x1="589" y1="735" x2="596" y2="735"/>
+          </g>
+          <line id="hh" x1="560" y1="735" x2="560" y2="713" stroke="#EAF7F1" stroke-width="5" stroke-linecap="round" transform="rotate(150 560 735)"/>
+          <line id="mh" x1="560" y1="735" x2="560" y2="704" stroke="#3CFFB0" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="560" cy="735" r="5" fill="#3CFFB0"/>
+        </g>
+
+        <!-- półka -->
+        <rect x="430" y="880" width="260" height="12" rx="4" fill="#1F5743"/>
+        <rect x="446" y="810" width="22" height="70" rx="3" fill="#2A7A5C"/>
+        <rect x="471" y="820" width="18" height="60" rx="3" fill="#164536"/>
+        <rect x="492" y="804" width="26" height="76" rx="3" fill="#1F5743" stroke="rgba(150,214,188,.25)" stroke-width="2"/>
+        <rect x="528" y="826" width="20" height="56" rx="3" fill="#2A7A5C" transform="rotate(14 538 880)"/>
+        <path d="M624 880 L 618 846 H 666 L 660 880 Z" fill="#2A7A5C"/>
+        <path d="M642 846 C 630 820, 612 812, 600 816 C 612 832, 628 840, 642 846 Z" fill="#3CFFB0" opacity=".75"/>
+        <path d="M642 846 C 648 818, 664 806, 678 806 C 672 826, 658 840, 642 846 Z" fill="#96D6BC" opacity=".8"/>
+        <path d="M642 846 C 640 826, 644 808, 652 798 C 656 816, 652 832, 642 846 Z" fill="#3CFFB0" opacity=".55"/>
+
+        <!-- biurko -->
+        <rect x="150" y="1116" width="16" height="164" fill="#12352A"/>
+        <rect x="654" y="1116" width="16" height="164" fill="#12352A"/>
+        <rect x="172" y="1116" width="170" height="64" rx="4" fill="#164536"/>
+        <rect x="236" y="1142" width="42" height="7" rx="3" fill="#2A7A5C"/>
+        <rect x="130" y="1100" width="560" height="18" rx="5" fill="#1F5743"/>
+        <!-- stos książek -->
+        <rect x="148" y="1072" width="112" height="28" rx="3" fill="#2A7A5C"/>
+        <rect x="156" y="1050" width="96" height="22" rx="3" fill="#164536" stroke="rgba(150,214,188,.25)" stroke-width="2"/>
+        <rect x="144" y="1030" width="106" height="20" rx="3" fill="#1F5743"/>
+        <!-- lampka i światło -->
+        <polygon id="coneEl" points="372,982 428,968 650,1100 300,1100" fill="url(#cone)" opacity=".85"/>
+        <ellipse cx="300" cy="1096" rx="34" ry="7" fill="#2A7A5C"/>
+        <path d="M300 1094 L 282 992 L 370 950" fill="none" stroke="#2A7A5C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="350,932 404,918 428,968 368,984" fill="#1F5743"/>
+        <line x1="368" y1="984" x2="428" y2="968" stroke="#3CFFB0" stroke-width="5" stroke-linecap="round"/>
+        <!-- kubek -->
+        <rect x="344" y="1058" width="44" height="42" rx="8" fill="#2A7A5C"/>
+        <path d="M388 1068 h 8 a 10 10 0 0 1 0 20 h -8" fill="none" stroke="#2A7A5C" stroke-width="6"/>
+        <g id="steam" fill="none" stroke="#96D6BC" stroke-opacity=".5" stroke-width="4" stroke-linecap="round">
+          <path d="M358 1046 q -8 -12 0 -24 q 8 -12 0 -24"/><path d="M374 1046 q -8 -12 0 -24 q 8 -12 0 -24"/>
+        </g>
+        <!-- zeszyt (z boku) i kartka do przewracania -->
+        <path d="M430 1100 Q 470 1084 515 1094 Q 560 1084 600 1100 Z" fill="#96D6BC" opacity=".9"/>
+        <path id="page" d="M515 1094 Q 560 1084 600 1100" fill="none" stroke="#EAF7F1" stroke-width="4" stroke-linecap="round" opacity="0"/>
+        <!-- telefon leży ekranem w dół -->
+        <rect x="608" y="1092" width="64" height="8" rx="3" fill="#05120D" stroke="rgba(150,214,188,.5)" stroke-width="2"/>
+
+        <!-- drzwi Oli (dalej w prawo) -->
+        <rect x="790" y="680" width="110" height="88" rx="6" fill="#0A1F18" stroke="#2A7A5C" stroke-width="6"/>
+        <path d="M806 752 C 826 720, 846 738, 860 706 C 869 724, 878 730, 886 724" fill="none" stroke="#3CFFB0" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/>
+        <rect x="1180" y="1030" width="26" height="40" rx="5" fill="#12352A" stroke="rgba(150,214,188,.35)" stroke-width="2"/>
+        <rect x="1240" y="860" width="200" height="430" fill="#12352A" stroke="rgba(150,214,188,.45)" stroke-width="5"/>
+        <rect x="1254" y="874" width="172" height="416" fill="#164536"/>
+        <rect x="1274" y="900" width="132" height="150" rx="6" fill="none" stroke="rgba(150,214,188,.18)" stroke-width="3"/>
+        <rect x="1274" y="1110" width="132" height="150" rx="6" fill="none" stroke="rgba(150,214,188,.18)" stroke-width="3"/>
+        <rect x="1300" y="950" width="80" height="40" rx="8" fill="#0A1F18" stroke="#3CFFB0" stroke-opacity=".6" stroke-width="2"/>
+        <text x="1340" y="978" text-anchor="middle" font-family="JB" font-size="22" fill="#3CFFB0" letter-spacing="3">OLA</text>
+        <circle cx="1276" cy="1090" r="9" fill="#3CFFB0"/>
+        <rect x="1276" y="1085" width="30" height="9" rx="4" fill="#3CFFB0"/>
+        <ellipse cx="1340" cy="1296" rx="140" ry="14" fill="url(#floorGlow)"/>
+        <rect x="1254" y="1284" width="172" height="5" fill="#3CFFB0" opacity=".65"/>
+
+        <!-- dywanik -->
+        <rect x="430" y="1300" width="520" height="22" rx="11" fill="#12352A"/>
+        <rect x="450" y="1306" width="480" height="4" rx="2" fill="rgba(150,214,188,.12)"/>
+        <rect x="1150" y="1300" width="380" height="20" rx="10" fill="#0E2B21"/>
+
+        <!-- postać siedząca (profil w lewo) -->
+        <g id="sit">
+          <rect x="802" y="990" width="14" height="300" rx="6" fill="#12352A"/>
+          <rect x="712" y="1172" width="104" height="14" rx="5" fill="#164536"/>
+          <rect x="722" y="1186" width="12" height="104" rx="4" fill="#12352A"/>
+          <path d="M772 1142 L 772 1178 Q 772 1188 762 1188 L 648 1188 Q 630 1188 630 1170 L 630 1162 Q 630 1146 648 1146 Z" fill="#164536"/>
+          <rect x="630" y="1166" width="30" height="112" rx="10" fill="#164536"/>
+          <rect x="598" y="1272" width="66" height="18" rx="9" fill="#05120D" stroke="rgba(150,214,188,.3)" stroke-width="2"/>
+          <path d="M700 1000 Q 735 985 760 1005 L 782 1150 Q 784 1172 764 1172 L 700 1172 Q 686 1172 684 1156 L 676 1040 Q 674 1010 700 1000 Z" fill="#2A7A5C"/>
+          <path d="M714 1000 Q 744 978 762 1008 Q 742 1000 722 1012 Z" fill="#1F5743"/>
+          <rect x="686" y="976" width="18" height="28" fill="#79B79D"/>
+          <circle cx="690" cy="945" r="40" fill="#8CCBB2"/>
+          <path d="M652 936 Q 641 950 652 958 Z" fill="#8CCBB2"/>
+          <path d="M650 938 C 648 903, 680 891, 704 899 C 736 909, 744 950, 724 984 C 717 960, 708 940, 690 932 C 676 926, 662 929, 650 938 Z" fill="#05120D"/>
+          <circle cx="734" cy="910" r="18" fill="#05120D"/>
+          <circle cx="706" cy="950" r="7" fill="#79B79D"/>
+          <circle cx="664" cy="943" r="3.5" fill="#05120D"/>
+          <g id="sarm">
+            <line x1="718" y1="1018" x2="668" y2="1086" stroke="#2A7A5C" stroke-width="28" stroke-linecap="round"/>
+            <line x1="668" y1="1086" x2="592" y2="1092" stroke="#2A7A5C" stroke-width="26" stroke-linecap="round"/>
+            <line x1="578" y1="1098" x2="566" y2="1066" stroke="#96D6BC" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="582" cy="1090" r="13" fill="#8CCBB2"/>
+          </g>
+        </g>
+
+        <!-- postać stojąca (profil w prawo), stopy w (0,0) -->
+        <g id="stand" transform="translate(770 1290)" opacity="0">
+          <g id="bodyS">
+            <g id="legB"><rect x="-14" y="-150" width="28" height="140" rx="12" fill="#12352A"/><rect x="-16" y="-16" width="52" height="16" rx="8" fill="#05120D"/></g>
+            <g id="legF"><rect x="-14" y="-150" width="28" height="140" rx="12" fill="#164536"/><rect x="-16" y="-16" width="52" height="16" rx="8" fill="#05120D" stroke="rgba(150,214,188,.3)" stroke-width="2"/></g>
+            <path d="M-36 -300 Q 0 -318 36 -300 L 42 -160 Q 42 -144 26 -144 L -26 -144 Q -42 -144 -42 -160 Z" fill="#2A7A5C"/>
+            <path d="M-30 -302 Q -48 -280 -36 -260 Q -26 -284 -10 -300 Z" fill="#1F5743"/>
+            <rect x="-9" y="-322" width="18" height="26" fill="#79B79D"/>
+            <circle cx="4" cy="-352" r="40" fill="#8CCBB2"/>
+            <path d="M42 -360 Q 53 -346 42 -338 Z" fill="#8CCBB2"/>
+            <path d="M44 -358 C 46 -393, 14 -405, -10 -397 C -42 -387, -50 -346, -30 -312 C -23 -336, -14 -356, 4 -364 C 18 -370, 32 -367, 44 -358 Z" fill="#05120D"/>
+            <circle cx="-40" cy="-386" r="18" fill="#05120D"/>
+            <circle cx="-12" cy="-346" r="7" fill="#79B79D"/>
+            <circle cx="30" cy="-353" r="3.5" fill="#05120D"/>
+            <g id="arm"><line x1="6" y1="-284" x2="14" y2="-172" stroke="#2A7A5C" stroke-width="26" stroke-linecap="round"/><circle cx="15" cy="-160" r="13" fill="#8CCBB2"/></g>
+          </g>
+        </g>
+
+        <!-- zmrok w pokoju (S4) -->
+        <rect id="dusk" x="0" y="600" width="1900" height="900" fill="#020A07" opacity="0"/>
+      </g>
+      <polygon id="coneTop" points="372,982 428,968 650,1100 300,1100" fill="url(#cone)" opacity="0"/>
+    </g>
+    <rect x="70" y="640" width="940" height="800" rx="44" fill="none" stroke="rgba(150,214,188,.22)" stroke-width="3"/>
+  </svg>
+
+  <!-- ZBLIŻENIE 1: ręka sięga po telefon -->
+  <svg class="full clip" id="cuA" data-start="3.4" data-duration="3.2" data-track-index="2" viewBox="0 0 1080 1920"></svg>
+  <!-- ZBLIŻENIE 2: klucz wraca, klik -->
+  <svg class="full clip" id="cuB" data-start="15.0" data-duration="3.6" data-track-index="2" viewBox="0 0 1080 1920"></svg>
+
+  <!-- TEKSTY -->
+  <div class="clip" id="t1" data-start="0" data-duration="3.4" data-track-index="3">
+    <div class="kick" id="k1" style="top:240px"><b></b>SESJA · ŚRODA, 17:00</div>
+    <div class="h" id="h1" style="top:300px; font-size:84px">Klucz do<br>Instagrama<br><span class="mint">ma Ola.</span></div>
+  </div>
+  <div class="clip" id="t2" data-start="3.4" data-duration="3.0" data-track-index="3">
+    <div class="h" id="h2" style="top:400px; font-size:84px">Ręka i tak sięga.</div>
+  </div>
+  <div class="clip" id="t3" data-start="6.4" data-duration="5.8" data-track-index="3">
+    <div class="h" id="h3" style="top:330px; font-size:84px">Klucz? U Oli.<br><span class="sage">Za ścianą.</span></div>
+    <div class="bub ola" id="b1" style="left:540px; top:684px">Ile stron?</div>
+    <div class="bub me" id="b2" style="left:250px; top:796px">Dwie.</div>
+    <div class="bub ola" id="b3" style="left:450px; top:672px; width:400px">To jeszcze osiemnaście.</div>
+  </div>
+  <div class="clip" id="t4" data-start="12.2" data-duration="3.0" data-track-index="3">
+    <div class="kick" id="k4" style="top:262px"><b></b>19:40</div>
+    <div class="h" id="h4" style="top:330px; font-size:84px">Osiemnaście stron<br><span class="sage">później.</span></div>
+  </div>
+  <div class="clip" id="t5" data-start="15.2" data-duration="3.4" data-track-index="3">
+    <div class="bub ola" id="b5" style="left:590px; top:540px">Proszę.</div>
+    <div class="h mint" id="h5a" style="top:300px; font-size:120px">Klik.</div>
+    <div class="h" id="h5b" style="top:452px; font-size:72px">Zasłużone 15 minut.</div>
+  </div>
+
+  <!-- PLANSZA KOŃCOWA -->
+  <div class="clip" id="t6" data-start="18.6" data-duration="2.4" data-track-index="3">
+    <svg id="logo" style="position:absolute; left:370px; top:560px" width="200" height="200" viewBox="0 0 200 200">
+      <g fill="none" stroke="#3CFFB0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 70 V 40 Q10 10 40 10 H 70"/><path d="M130 10 H 160 Q190 10 190 40 V 70"/>
+        <path d="M190 130 V 160 Q190 190 160 190 H 130"/><path d="M70 190 H 40 Q10 190 10 160 V 130"/>
+        <g transform="translate(104 104) rotate(-45)"><circle cx="-34" cy="0" r="22"/><path d="M-12 0 H 52 M34 0 V 18 M50 0 V 14"/></g>
+      </g>
+    </svg>
+    <div class="end-t" style="top:840px; font-family:M8; font-size:84px">Key to Focus</div>
+    <div class="end-t mint" style="top:970px; font-family:M8; font-size:62px">Szukam testerów</div>
+    <div class="end-t sage" style="top:1060px; font-family:M4; font-size:40px">Android 8+ z NFC · bezpłatnie</div>
+    <div class="cta" id="cta">link w bio</div>
+  </div>
+</div>
+
+<script>
+window.__timelines = window.__timelines || {};
+
+// --- drobiny światła w tle (deterministyczne) ---
+(function () {
+  let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  let h = '';
+  for (let i = 0; i < 26; i++) h += `<circle cx="${(r() * 1080).toFixed(0)}" cy="${(r() * 1920).toFixed(0)}" r="${(1.5 + r() * 3).toFixed(1)}" opacity="${(0.04 + r() * 0.08).toFixed(2)}"/>`;
+  document.getElementById('motes').innerHTML = h;
+})();
+
+// --- zbliżenie biurka z góry (dwa warianty) ---
+function closeUp(id, written) {
+  const lines = [];
+  for (let i = 0; i < 11; i++) {
+    const y = 770 + i * 40;
+    lines.push(`<line x1="150" y1="${y}" x2="440" y2="${y}" stroke="rgba(150,214,188,.22)" stroke-width="2"/>`);
+    if (i < written) {
+      const w = 180 + ((i * 53) % 100);
+      lines.push(`<path d="M160 ${y - 8} q 12 -14 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0" fill="none" stroke="#3CFFB0" stroke-opacity=".5" stroke-width="3" stroke-dasharray="${w} 400"/>`);
+    }
+  }
+  const holes = []; for (let i = 0; i < 12; i++) holes.push(`<circle cx="132" cy="${730 + i * 40}" r="7" fill="#0A1F18"/>`);
+  return `
+  <defs>
+    <clipPath id="${id}clip"><rect x="70" y="640" width="940" height="800" rx="44"/></clipPath>
+    <filter id="${id}blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <g clip-path="url(#${id}clip)">
+    <rect x="70" y="640" width="940" height="800" fill="#123A2D"/>
+    <g fill="none" stroke="rgba(150,214,188,.06)" stroke-width="3">
+      <path d="M70 700 C 300 690, 600 716, 1010 698"/><path d="M70 860 C 380 850, 700 874, 1010 856"/><path d="M70 1020 C 300 1032, 640 1006, 1010 1024"/><path d="M70 1210 C 360 1196, 680 1220, 1010 1204"/><path d="M70 1370 C 300 1380, 700 1356, 1010 1372"/>
+    </g>
+    <g transform="rotate(-7 290 960)">
+      <rect x="110" y="700" width="360" height="520" rx="12" fill="#1F5743"/>
+      ${lines.join('')}${holes.join('')}
+    </g>
+    <g transform="rotate(-24 300 1330)"><rect x="150" y="1318" width="300" height="20" rx="6" fill="#96D6BC"/><polygon points="450,1318 486,1328 450,1338" fill="#EAF7F1"/><rect x="150" y="1318" width="34" height="20" rx="4" fill="#2A7A5C"/></g>
+    <g>
+      <circle cx="906" cy="770" r="74" fill="#1F5743" stroke="rgba(150,214,188,.35)" stroke-width="4"/>
+      <circle cx="906" cy="770" r="56" fill="#0B2219"/>
+      <rect x="972" y="752" width="44" height="34" rx="14" fill="none" stroke="#1F5743" stroke-width="12"/>
+    </g>
+    <g id="${id}key" transform="translate(1180 1250)">
+      <circle cx="58" cy="-48" r="22" fill="none" stroke="#96D6BC" stroke-width="6"/>
+      <circle cx="0" cy="0" r="62" fill="#0B241B" stroke="#3CFFB0" stroke-width="5"/>
+      <g transform="rotate(-45)" fill="none" stroke="#3CFFB0" stroke-width="7" stroke-linecap="round"><circle cx="-18" cy="0" r="12"/><path d="M-6 0 H 28 M18 0 V 10 M27 0 V 8"/></g>
+    </g>
+    <g id="${id}rings" fill="none" stroke="#3CFFB0" stroke-width="5">
+      <circle cx="650" cy="1110" r="120" opacity="0"/><circle cx="650" cy="1110" r="120" opacity="0"/><circle cx="650" cy="1110" r="120" opacity="0"/>
+    </g>
+    <g id="${id}ph" transform="translate(640 1030) rotate(8)">
+      <rect id="${id}sh" x="-110" y="-232" width="250" height="500" rx="40" fill="#000" opacity=".45" filter="url(#${id}blur)"/>
+      <rect x="-125" y="-250" width="250" height="500" rx="38" fill="#05120D" stroke="rgba(150,214,188,.55)" stroke-width="4"/>
+      <rect x="-112" y="-236" width="224" height="472" rx="28" fill="#071711"/>
+      <circle cx="0" cy="-222" r="5" fill="#0E2B21"/>
+      <g id="${id}lock" opacity="0">
+        <rect x="-112" y="-236" width="224" height="472" rx="28" fill="#0B241B"/>
+        <path d="M-22 -96 V -116 A 22 22 0 0 1 22 -116 V -96" fill="none" stroke="#3CFFB0" stroke-width="7" stroke-linecap="round"/>
+        <rect x="-38" y="-98" width="76" height="60" rx="12" fill="none" stroke="#3CFFB0" stroke-width="7"/>
+        <text x="0" y="22" text-anchor="middle" font-family="M6" font-size="31" fill="#EAF7F1">Zablokowane</text>
+        <text x="0" y="64" text-anchor="middle" font-family="M4" font-size="26" fill="#96D6BC">przyłóż klucz</text>
+        <g transform="translate(0 140) rotate(-45)" fill="none" stroke="#96D6BC" stroke-width="5" stroke-linecap="round"><circle cx="-14" cy="0" r="9"/><path d="M-5 0 H 22 M14 0 V 8 M21 0 V 6"/></g>
+      </g>
+      <g id="${id}open" opacity="0">
+        <rect x="-112" y="-236" width="224" height="472" rx="28" fill="#0E3426"/>
+        <circle cx="0" cy="-90" r="46" fill="none" stroke="#3CFFB0" stroke-width="7"/>
+        <path d="M-20 -90 l 14 14 l 28 -30" fill="none" stroke="#3CFFB0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="0" y="22" text-anchor="middle" font-family="M6" font-size="30" fill="#EAF7F1">Odblokowano</text>
+        <text x="0" y="96" text-anchor="middle" font-family="JB" font-size="58" fill="#3CFFB0">15 min</text>
+      </g>
+    </g>
+    <g id="${id}hand" transform="translate(1000 1640)">
+      <g transform="rotate(-35)">
+        <rect x="0" y="0" width="150" height="300" rx="40" fill="#2A7A5C"/>
+        <rect x="0" y="0" width="150" height="28" rx="12" fill="#1F5743"/>
+        <ellipse cx="75" cy="-24" rx="64" ry="70" fill="#8CCBB2"/>
+        <rect x="52" y="-172" width="36" height="140" rx="18" fill="#8CCBB2"/>
+        <path d="M100 -70 q 26 -6 34 18" fill="none" stroke="#79B79D" stroke-width="5" stroke-linecap="round"/>
+        <path d="M108 -40 q 24 -4 30 16" fill="none" stroke="#79B79D" stroke-width="5" stroke-linecap="round"/>
+        <rect x="-6" y="-60" width="34" height="84" rx="17" fill="#79B79D" transform="rotate(-28 12 0)"/>
+      </g>
+    </g>
+  </g>
+  <rect x="70" y="640" width="940" height="800" rx="44" fill="none" stroke="rgba(150,214,188,.22)" stroke-width="3"/>`;
+}
+document.getElementById('cuA').innerHTML = closeUp('a', 5);
+document.getElementById('cuB').innerHTML = closeUp('b', 11);
+
+// --- oś czasu ---
+const tl = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } });
+const io = 'power2.inOut';
+const rise = (sel, at, d = .55, y = 22) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: d }, at);
+tl.to('#motes', { y: -70, duration: 21, ease: 'none' }, 0);
+
+// S1 – biurko; tekst czytelny od klatki 0, rusza się tylko ręka z ołówkiem, para z kubka, światło lampki
+tl.fromTo('#sarm', { rotation: 0, svgOrigin: '718 1018' }, { rotation: -1.6, svgOrigin: '718 1018', duration: .22, ease: 'sine.inOut', repeat: 13, yoyo: true }, 0.25);
+tl.fromTo('#steam', { y: 0, opacity: 1 }, { y: -10, opacity: .35, duration: 1.4, ease: 'sine.inOut', repeat: 13, yoyo: true }, 0);
+tl.fromTo('#coneEl', { opacity: .85 }, { opacity: 1, duration: 1.6, ease: 'sine.inOut', repeat: 11, yoyo: true }, 0);
+tl.to(['#k1', '#h1'], { opacity: 0, y: -18, duration: .35, ease: io }, 3.05);
+
+// S2 – zbliżenie: ręka sama sięga po telefon
+tl.fromTo('#cuA', { opacity: 0 }, { opacity: 1, duration: .35, ease: 'none' }, 3.4);
+rise('#h2', 3.5);
+tl.fromTo('#ahand', { x: 1260, y: 1900 }, { x: 741, y: 1329, duration: .7, ease: 'power2.out' }, 3.85);
+tl.to('#ahand', { x: 735, y: 1322, duration: .1, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 4.5);
+tl.to('#alock', { opacity: 1, duration: .25, ease: 'none' }, 4.65);
+tl.to('#ahand', { x: 900, y: 1560, duration: .8, ease: 'power2.inOut' }, 5.5);
+tl.to(['#h2', '#cuA'], { opacity: 0, duration: .3, ease: 'none' }, 6.1);
+
+// S3 – wstaje, idzie do drzwi Oli, puka; rozmowa przez drzwi
+rise('#h3', 6.5);
+tl.to('#sit', { opacity: 0, duration: .35, ease: 'none' }, 6.6);
+tl.fromTo('#stand', { opacity: 0, y: 1300 }, { opacity: 1, y: 1290, duration: .35 }, 6.6);
+tl.to('#world', { x: -560, duration: 1.8, ease: io }, 6.85);
+tl.to('#stand', { x: 1120, duration: 1.45, ease: 'sine.inOut' }, 7.0);
+[7.05, 7.4, 7.75, 8.1].forEach((t, i) => {
+  tl.fromTo('#legF', { rotation: i % 2 ? -16 : 16, svgOrigin: '0 -150' }, { rotation: i % 2 ? 16 : -16, svgOrigin: '0 -150', duration: .35, ease: 'sine.inOut' }, t);
+  tl.fromTo('#legB', { rotation: i % 2 ? 16 : -16, svgOrigin: '0 -150' }, { rotation: i % 2 ? -16 : 16, svgOrigin: '0 -150', duration: .35, ease: 'sine.inOut' }, t);
+  tl.fromTo('#bodyS', { y: 0 }, { y: -6, duration: .175, ease: 'sine.out', yoyo: true, repeat: 1 }, t);
+});
+tl.to(['#legF', '#legB'], { rotation: 0, svgOrigin: '0 -150', duration: .2 }, 8.45);
+tl.to('#arm', { rotation: -78, svgOrigin: '6 -284', duration: .3, ease: io }, 8.2);
+[8.45, 8.68, 8.91].forEach(t => tl.to('#arm', { rotation: -70, svgOrigin: '6 -284', duration: .08, ease: 'sine.in', yoyo: true, repeat: 1 }, t - .08));
+tl.to('#arm', { rotation: 0, svgOrigin: '6 -284', duration: .4, ease: io }, 9.2);
+rise('#b1', 9.05, .4, 14);
+rise('#b2', 9.95, .4, 14);
+tl.to('#b1', { opacity: 0, duration: .25, ease: 'none' }, 10.6);
+rise('#b3', 10.75, .4, 14);
+tl.to('#stand', { scaleX: -1, transformOrigin: '50% 100%', duration: .01 }, 11.3);
+tl.to(['#h3', '#b2', '#b3'], { opacity: 0, duration: .35, ease: io }, 11.85);
+tl.to('#world', { opacity: 0, duration: .3, ease: 'none' }, 11.95);
+
+// S4 – z powrotem przy biurku, czas płynie (zegar, zmrok, kartki)
+tl.set('#world', { x: 0 }, 12.25);
+tl.set('#stand', { opacity: 0 }, 12.25);
+tl.set('#sit', { opacity: 1 }, 12.25);
+tl.to('#world', { opacity: 1, duration: .4, ease: 'none' }, 12.25);
+rise('#k4', 12.3); rise('#h4', 12.4);
+tl.fromTo('#mh', { rotation: 0, svgOrigin: '560 735' }, { rotation: 960, svgOrigin: '560 735', duration: 2.4, ease: 'sine.inOut' }, 12.45);
+tl.to('#hh', { rotation: 230, svgOrigin: '560 735', duration: 2.4, ease: 'sine.inOut' }, 12.45);
+tl.to('#night', { opacity: .88, duration: 2.2, ease: 'sine.inOut' }, 12.5);
+tl.to('#stars', { opacity: .9, duration: 1.2 }, 13.4);
+tl.to('#moon', { opacity: 1, duration: 1.2 }, 13.2);
+tl.to('#lights', { opacity: .8, duration: 1.4 }, 13.0);
+tl.to('#dusk', { opacity: .38, duration: 2.2, ease: 'sine.inOut' }, 12.5);
+tl.to('#coneTop', { opacity: .9, duration: 2.0, ease: 'sine.inOut' }, 12.7);
+tl.to('#steam', { opacity: 0, duration: .8 }, 12.6);
+tl.fromTo('#sarm', { rotation: 0, svgOrigin: '718 1018' }, { rotation: -1.6, svgOrigin: '718 1018', duration: .22, ease: 'sine.inOut', repeat: 9, yoyo: true, immediateRender: false }, 12.6);
+[12.9, 13.7, 14.5].forEach(t => {
+  tl.fromTo('#page', { opacity: 1, scaleX: 1, svgOrigin: '515 1094' }, { scaleX: -1, svgOrigin: '515 1094', duration: .45, ease: io, immediateRender: false }, t);
+  tl.to('#page', { opacity: 0, duration: .1 }, t + .45);
+});
+tl.to(['#k4', '#h4'], { opacity: 0, duration: .3, ease: io }, 14.85);
+
+// S5 – zbliżenie: Ola oddaje klucz, klik
+tl.fromTo('#cuB', { opacity: 0 }, { opacity: 1, duration: .4, ease: 'none' }, 15.0);
+tl.fromTo('#bkey', { x: 1180, y: 1250 }, { x: 800, y: 1260, duration: .6, ease: 'power2.out' }, 15.45);
+rise('#b5', 15.65, .4, 14);
+tl.to('#bkey', { x: 690, y: 1196, duration: .45, ease: io }, 16.15);
+tl.to('#bph', { scale: 1.035, transformOrigin: '50% 50%', duration: .3, ease: io }, 16.1);
+tl.to('#bsh', { opacity: .7, duration: .3 }, 16.1);
+tl.to('#bph', { scale: 1, duration: .35, ease: 'back.out(2)' }, 16.6);
+tl.to('#block', { opacity: 1, duration: .01 }, 15.0);
+tl.to('#block', { opacity: 0, duration: .2 }, 16.62);
+tl.to('#bopen', { opacity: 1, duration: .25 }, 16.62);
+document.querySelectorAll('#brings circle').forEach((c, i) => {
+  tl.fromTo(c, { opacity: .85, scale: .6, svgOrigin: '650 1110' }, { opacity: 0, scale: 2.6, svgOrigin: '650 1110', duration: 1.1, ease: 'sine.out', immediateRender: false }, 16.62 + i * .18);
+});
+tl.to('#b5', { opacity: 0, duration: .3 }, 16.5);
+tl.fromTo('#h5a', { opacity: 0, scale: .94, transformOrigin: '0% 50%' }, { opacity: 1, scale: 1, duration: .35 }, 16.65);
+rise('#h5b', 16.95);
+tl.set('#room', { opacity: 0 }, 16.0);
+tl.to(['#h5a', '#h5b', '#cuB'], { opacity: 0, duration: .35, ease: io }, 18.25);
+
+// S6 – plansza końcowa
+tl.fromTo('#logo', { opacity: 0, scale: .9, transformOrigin: '100px 100px' }, { opacity: 1, scale: 1, duration: .6 }, 18.75);
+tl.fromTo('#t6 .end-t', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .5, stagger: .18 }, 18.9);
+tl.fromTo('#cta', { opacity: 0, scale: .92 }, { opacity: 1, scale: 1, duration: .5 }, 19.4);
+tl.to('#t6', { opacity: 0, duration: .4, ease: 'none' }, 20.6);
+
+window.__timelines['main'] = tl;
+tl.seek(0);
+</script>
+</body>
+</html>

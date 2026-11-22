@@ -65,6 +65,9 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 | 09.11 | 14 kroków (animacja) | 62 | 67% | nieczytelna klatka 0 = przewinięcie |
 | 11.11 | Jeszcze 15 minut (animacja) | 5 | 100% | podejrzenie ograniczenia zasięgu konta, nie samej treści – sprawdzić Stan konta |
 | 15.11 | Najpierw wstań (animacja) | 60 | 83% | śr. 3,3 s (plansze 5,9–7,6 s); zasięg wrócił, ale neutralne „Budzik: 06:30.” nad gęstą animacją nie zatrzymuje → na klatce 0 duże hasło-sytuacja z ukrytym żartem, tekst ważniejszy od animacji |
+| 16.11 | Na 2 minuty (animacja, stary szablon) | 80 | 74% | śr. 2,9 s – ten sam szablon co 15.11 już nie trzyma; potwierdza decyzję o kierunku v2 |
+| 18.11 | Pętla nawyku (A, v2) | 199 | 76% | śr. 5,3 s – rekord wyświetleń; spokojne wyjaśnienie ze źródłem trzyma dłużej niż stary szablon, ale start wciąż do poprawy |
+| 21.11 | Po klucz (B, POV, v2) | 159 (po ~1 dniu) | 63% | śr. 4,9 s – najmniej przewinięć ze wszystkich animacji; ludzka sytuacja + jasne hasło „POV” na klatce 0 działa |
 
 ## Jak powstaje rolka (procedura dla zaplanowanego zadania)
 1. `npm ci` w katalogu głównym (ffmpeg, python3, numpy, scipy muszą być dostępne; doinstaluj pip install --break-system-packages, jeśli brak).

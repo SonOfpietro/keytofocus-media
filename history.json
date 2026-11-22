@@ -95,5 +95,20 @@
     "approved_by_dawid": true,
     "status": "opublikowana",
     "url": "https://www.instagram.com/reel/DgAZpIlm8rj/"
+  },
+  {
+    "date": "2026-11-23",
+    "slug": "klucz-ma-ola",
+    "hook": "Klucz do Instagrama ma Ola.",
+    "theme": "nauka do egzaminu; klucz oddany współlokatorce za ścianą – po klucz trzeba zapukać i usłyszeć „Ile stron?”; po 18 stronach klucz wraca i klik daje 15 minut",
+    "format": "C (ilustrowana mini-scenka, styl v2, HyperFrames)",
+    "file": "media/2026-11-23-klucz-ma-ola.mp4",
+    "cover": "media/2026-11-23-klucz-ma-ola.jpg",
+    "videoCoverMilliseconds": 1500,
+    "duration": 21.0,
+    "caption": "Egzamin w piątek, a ręka i tak sięga po telefon. Dlatego na czas sesji klucz ma Ola – za ścianą, razem z pytaniem „ile stron?”.\n\nW Key to Focus blokujesz wybrane aplikacje, a dostęp na ustalony czas daje dopiero przyłożenie fizycznego klucza NFC. Klucz to zwykły przedmiot: możesz go odłożyć daleko albo oddać komuś na przechowanie.\n\nSzukam testerów: Android 8+ z NFC. Testy są bezpłatne. Zgłoszenia: link w bio.\n\nKto u ciebie pilnowałby klucza?\n\n#KeyToFocus #mniejscrollowania #cyfrowenawyki #skupienie #Android",
+    "publication": "2026-11-23T18:30:00+01:00",
+    "approved_by_dawid": false,
+    "status": "czeka"
   }
 ]
