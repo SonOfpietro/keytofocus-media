@@ -115,5 +115,23 @@
     ],
     "metricool_id": 437764132,
     "metricoolUuid": "-7890665037884996096"
+  },
+  {
+    "date": "2026-11-25",
+    "slug": "maszt-odyseusza",
+    "hook": "Odyseusz też nie ufał sobie.",
+    "theme": "zobowiązanie z wyprzedzeniem: Odyseusz każe się przywiązać do masztu, zanim syreny zaczną śpiewać (Homer, Odyseja XII; J. Elster 1979) → decyzję o blokadzie podejmujesz, gdy jesteś spokojny; dziś zamiast liny klucz na półce",
+    "format": "A (spokojna animacja-wyjaśnienie, styl v2, canvas)",
+    "file": "media/2026-11-25-maszt-odyseusza.mp4",
+    "cover": "media/2026-11-25-maszt-odyseusza.jpg",
+    "videoCoverMilliseconds": 1500,
+    "duration": 22.4,
+    "caption": "Odyseusz wiedział, że syreny zaczną śpiewać, więc kazał się przywiązać do masztu, zanim zaczęły. Z telefonem wieczorem bywa podobnie: łatwiej zdecydować wcześniej, kiedy jesteś spokojny.\n\nW Key to Focus wybierasz aplikacje do blokady i harmonogram, a dostęp na ustalony czas daje dopiero przyłożenie fizycznego klucza NFC. Klucz możesz zostawić na półce w innym pokoju – liny nie trzeba.\n\nSzukam testerów: Android 8+ z NFC. Testy są bezpłatne. Zgłoszenia: link w bio.\n\nGdzie u ciebie leżałby klucz – w przedpokoju czy w kuchni?\n\nŹródła: Homer, „Odyseja”, pieśń XII; Jon Elster, „Ulysses and the Sirens” (1979).\n\n#KeyToFocus #mniejscrollowania #cyfrowenawyki #skupienie #Android",
+    "publication": "2026-11-25T19:00:00+01:00",
+    "approved_by_dawid": false,
+    "auto": true,
+    "status": "zaplanowana",
+    "metricool_id": 440320773,
+    "metricoolUuid": "4654334274190655595"
   }
 ]
