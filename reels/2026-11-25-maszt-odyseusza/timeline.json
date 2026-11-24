@@ -1,0 +1,32 @@
+{
+  "fps": 30,
+  "duration": 22.4,
+  "scenes": {
+    "hook": [0.0, 3.2],
+    "sirens": [3.2, 6.4],
+    "mast": [6.4, 10.4],
+    "decision": [10.4, 14.2],
+    "shelf": [14.2, 17.6],
+    "rope": [17.6, 19.4],
+    "end": [19.4, 22.4]
+  },
+  "events": {
+    "rocksIn": 3.3,
+    "zoomStart": 6.4,
+    "zoomEnd": 7.3,
+    "ropeStart": 7.0,
+    "ropeEnd": 8.2,
+    "knot": 8.25,
+    "axisStart": 10.5,
+    "nodeL": 10.95,
+    "arcDraw": 11.5,
+    "arcEnd": 12.5,
+    "nodeR": 12.55,
+    "source": 11.8,
+    "keyIn": 14.75,
+    "coil": 17.85
+  },
+  "sirenNotes": [8.4, 8.85, 9.3, 9.75, 10.2],
+  "oarPeriod": 1.6,
+  "cues": [0.0, 3.2, 6.4, 10.4, 14.2, 17.6, 19.4]
+}
