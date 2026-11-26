@@ -1,0 +1,33 @@
+{
+  "fps": 30,
+  "duration": 19.8,
+  "scenes": {
+    "hook": [0.0, 3.4],
+    "lock": [3.4, 5.6],
+    "home": [5.6, 8.0],
+    "window": [8.0, 10.8],
+    "snow": [10.8, 14.2],
+    "joke": [14.2, 16.8],
+    "end": [16.8, 19.8]
+  },
+  "events": {
+    "bell": 0.35,
+    "cardIn": 3.5,
+    "lockPulse": 3.95,
+    "cardOut": 5.35,
+    "bubbleIn": 5.65,
+    "bubbleOut": 7.6,
+    "pocket": 8.1,
+    "headUp": 8.35,
+    "headUpEnd": 9.15,
+    "snowRise": 8.9,
+    "snowFull": 11.6,
+    "glassFlakes": 9.4,
+    "brakeStart": 13.6,
+    "stop": 15.6,
+    "doorChime": 15.75,
+    "sceneOut": 16.55
+  },
+  "railPeriod": 0.86,
+  "cues": [0.0, 3.4, 5.6, 8.0, 10.8, 14.2, 16.8]
+}

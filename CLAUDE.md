@@ -81,7 +81,8 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 | 16.11 | Na 2 minuty (animacja, stary szablon) | 80 | 74% | śr. 2,9 s – ten sam szablon co 15.11 już nie trzyma; potwierdza decyzję o kierunku v2 |
 | 18.11 | Pętla nawyku (A, v2) | 199 | 76% | śr. 5,3 s – rekord wyświetleń; spokojne wyjaśnienie ze źródłem trzyma dłużej niż stary szablon, ale start wciąż do poprawy |
 | 21.11 | Po klucz (B, POV, v2) | 164 (po 3 dniach) | 63% | śr. 5,0 s – ludzka sytuacja + jasne hasło „POV” na klatce 0 działa |
-| 23.11 | Klucz ma Ola (C, mini-scenka, v2) | 161 (po ~1 dniu) | 57% | śr. 6,1 s – najlepsza animacja jak dotąd (najmniej przewinięć, najdłużej oglądana); konkretna postać i zdanie-sytuacja z ukrytym uśmiechem na klatce 0 |
+| 23.11 | Klucz ma Ola (C, mini-scenka, v2) | 165 (po 3 dniach) | 56% | śr. 6,1 s – najlepsza animacja jak dotąd (najmniej przewinięć, najdłużej oglądana); konkretna postać i zdanie-sytuacja z ukrytym uśmiechem na klatce 0 |
+| 25.11 | Maszt Odyseusza (A, mit + źródło, v2) | 133 (po ~1 dniu) | 54% | śr. 6,4 s – nowy rekord utrzymania (najmniej przewinięć, najdłużej oglądana); znana historia + ludzkie hasło „też nie ufał sobie” trzyma lepiej niż suchy diagram; wyświetlenia jeszcze rosną |
 
 ## Jak powstaje rolka (procedura dla zaplanowanego zadania)
 1. `npm ci` w katalogu głównym (ffmpeg, python3, numpy, scipy muszą być dostępne; doinstaluj pip install --break-system-packages, jeśli brak).
