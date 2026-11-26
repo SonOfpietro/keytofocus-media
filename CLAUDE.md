@@ -40,11 +40,17 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 - Po OK: createScheduledPost, `status: "zaplanowana"` + metricool_id w history.json, licznik w tym pliku +1, zadanie w panelu `done`.
 - Od 3/3: produkcja od razu planuje post na następny dzień (bez zadania w panelu), publikacja tylko sprawdza, że post jest w Metricool.
 
+## Klucz z kodem kreskowym (od 26.11, polecenie Dawida) – WSPOMINAJ W KAŻDEJ ROLCE
+- Telefon bez NFC też wystarczy: kluczem może być kod kreskowy albo QR z dowolnej rzeczy w domu (np. pasta do zębów, książka, opakowanie herbaty) albo wydrukowany kod QR. Odblokowujesz, skanując go aparatem. Działa offline, aplikacja zapisuje tylko skrót kodu, nie jego treść.
+- Każda rolka od 27.11: wzmianka w opisie (szablon niżej) i na planszy końcowej. W samej historii tylko wtedy, gdy pasuje naturalnie (np. kluczem jest kod z książki na półce w innym pokoju). Kod nie musi być głównym motywem każdej rolki – różnorodność nadal obowiązuje.
+- Dobre motywy: „klucz, który już masz w domu”, wybór rzeczy, która zostaje daleko od kanapy, skan jako mały rytuał (dźwięk, ramka aparatu). Format D z nagraniem skanowania, gdy Dawid je dośle (`NAGRANIA.md`).
+- Uczciwie: w trybie kodu jest poczekalnia awaryjna. Bez kodu pod ręką dostęp do aplikacji jest dopiero po 10 min czekania (zmiany ustawień ochrony po 15 min). Nie przedstawiaj trybu kodu jako „bez wyjścia”.
+
 ## Co aplikacja NAPRAWDĘ robi (wolno mówić)
-- Android 8+ z NFC. Blokuje wybrane aplikacje i strony (strony przez lokalny filtr DNS).
-- Dostęp czasowy po przyłożeniu fizycznego klucza: zgodny tag NFC, YubiKey NFC (FIDO2) albo Galaxy Watch 4 z WearAuthn.
-- Klucz można odłożyć w innym miejscu, więc trzeba po niego wstać.
-- Na ekranie blokady nie ma przycisku „jeszcze chwilę” / odroczenia.
+- Android 8+, z NFC albo bez (wtedy kluczem jest kod kreskowy/QR). Blokuje wybrane aplikacje i strony (strony przez lokalny filtr DNS).
+- Dostęp czasowy po przyłożeniu fizycznego klucza: zgodny tag NFC, YubiKey NFC (FIDO2), Galaxy Watch 4 z WearAuthn albo po zeskanowaniu kodu-klucza aparatem.
+- Klucz (tag albo rzecz z kodem) można odłożyć w innym miejscu, więc trzeba po niego wstać.
+- Na ekranie blokady nie ma przycisku „jeszcze chwilę” / odroczenia. (Wyjątek: poczekalnia 10 min w trybie kodu kreskowego – patrz wyżej.)
 - Harmonogram blokady, czas dostępu po odblokowaniu, opcjonalna ochrona przed odinstalowaniem (administrator urządzenia).
 - Testy są bezpłatne. Zgłoszenia: link w bio (keytofocus.pl/#testy).
 
@@ -60,7 +66,7 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 - **Klatka 0 musi być od razu czytelna**: hasło wprowadzające widoczne bez animacji „dekodowania” i bez glitchu. (Rolka „14 kroków” miała rozsypany tekst na starcie i 67% przewinięć w 3 s.)
 - Plansza tekstu: maks. ~6 słów, min. ~1,2 s na przeczytanie.
 - Bezpieczna strefa tekstu: x 90–850, y 230–1440 (prawa krawędź i dół zajęte przez UI Instagrama).
-- Ostatnia plansza (styl v2): logo, „Key to Focus”, „Szukam testerów”, „Android 8+ z NFC · bezpłatnie”, „link w bio”.
+- Ostatnia plansza (styl v2): logo, „Key to Focus”, „Szukam testerów”, „Android 8+ · bezpłatnie”, „NFC albo kod kreskowy”, „link w bio”.
 - Muzyka i efekty tylko syntezowane w kodzie (numpy/scipy), zsynchronizowane z wydarzeniami z timeline.json. Nigdy cudzych utworów.
 - Styl: patrz „Kierunek v2” – ciemna zieleń + mięta, spokojny ruch, fonty Manrope + JetBrains Mono (engine/fonts). Unbounded/Chakra Petch i futurystyczny HUD tylko jako rzadki akcent formatu A, nigdy jako szablon.
 
@@ -101,7 +107,7 @@ Powód zmiany: rolki 15–16.11 były tym samym szablonem z podmienionym tekstem
 
 <1–2 zdania: jak działa Key to Focus – tylko fakty z sekcji „wolno”>
 
-Szukam testerów: Android 8+ z NFC. Testy są bezpłatne. Zgłoszenia: link w bio.
+Szukam testerów: Android 8+. Bez NFC też – wtedy kluczem jest kod kreskowy z dowolnej rzeczy. Testy są bezpłatne. Zgłoszenia: link w bio.
 
 <pytanie do widza, na które łatwo odpowiedzieć>
 

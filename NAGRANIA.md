@@ -8,5 +8,6 @@ Nagrywaj w pionie, 1080p lub 4K, 30 fps, przy dziennym świetle lub ciepłej lam
 4. Nagranie ekranu: dodanie aplikacji do blokady, ustawienie harmonogramu, czas dostępu po odblokowaniu.
 5. Spokojne „przebitki”: kubek kawy, książka, notes, okno, buty przy drzwiach – telefon leży ekranem w dół.
 6. Raz w miesiącu: ręka pisze lub rysuje na kartce (np. „co robię zamiast scrollowania”).
+7. NOWE (klucz z kodem kreskowym): skan kodu z domowej rzeczy aparatem – pasta do zębów, książka, opakowanie herbaty. Dwa ujęcia: ręka z telefonem nad rzeczą (z boku) i nagranie ekranu skanera aż do odblokowania. Plus ujęcie wyboru miejsca: rzecz odkładana na półkę w innym pokoju.
 
 Wrzucaj pliki do folderu na Dysku Google „KeyToFocus nagrania” i napisz w panelu (DLA CLAUDE), że są nowe.
