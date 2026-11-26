@@ -133,5 +133,23 @@
     "status": "zaplanowana",
     "metricool_id": 440320773,
     "metricoolUuid": "4654334274190655595"
+  },
+  {
+    "date": "2026-11-27",
+    "slug": "pierwszy-snieg",
+    "hook": "Zapomniałam klucza. Zobaczyłam pierwszy śnieg.",
+    "theme": "tramwaj o zmierzchu: klucz NFC został w domu na haczyku, Instagram zablokowany (bez przycisku odroczenia) → telefon do kieszeni, wzrok w okno i pierwszy śnieg na żywo; cichy żart „Relacja będzie. Jak dojadę do klucza.”",
+    "format": "C (ilustrowana mini-scenka, styl v2, canvas)",
+    "file": "media/2026-11-27-pierwszy-snieg.mp4",
+    "cover": "media/2026-11-27-pierwszy-snieg.jpg",
+    "videoCoverMilliseconds": 1500,
+    "duration": 19.8,
+    "publication": "2026-11-27T18:00:00+01:00",
+    "approved_by_dawid": false,
+    "auto": true,
+    "status": "zaplanowana",
+    "caption": "Wyszłam bez klucza, więc przez całą drogę Instagram był zablokowany. Za to pierwszy śnieg w tym roku zobaczyłam przez okno tramwaju, a nie na czyjejś relacji.\n\nKey to Focus blokuje wybrane aplikacje, a dostęp na ustalony czas daje przyłożenie fizycznego klucza NFC albo zeskanowanie kodu kreskowego z rzeczy, którą masz w domu. Klucz zostaje tam, gdzie go odłożysz – nawet jeśli to haczyk przy drzwiach.\n\nSzukam testerów: Android 8+. Bez NFC też – wtedy kluczem jest kod kreskowy z dowolnej rzeczy. Testy są bezpłatne. Zgłoszenia: link w bio.\n\nPierwszy śnieg już u ciebie był?\n\n#KeyToFocus #mniejscrollowania #cyfrowenawyki #skupienie #Android",
+    "metricool_id": 443161614,
+    "metricoolUuid": "-2628660888460178129"
   }
 ]
